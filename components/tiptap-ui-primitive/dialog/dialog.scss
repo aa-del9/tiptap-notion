@@ -1,0 +1,76 @@
+.tiptap-dialog-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    animation: fade-in 150ms ease-out;
+}
+
+.tiptap-dialog-content {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    max-height: 85vh;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    background-color: var(--tiptap-color-background);
+    border: 1px solid var(--tiptap-color-border);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 24px;
+    animation: dialog-content-in 200ms ease-out;
+}
+
+.tiptap-dialog-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tiptap-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.tiptap-dialog-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--tiptap-color-text);
+    margin: 0;
+}
+
+.tiptap-dialog-description {
+    font-size: 14px;
+    color: var(--tiptap-color-text-muted);
+    margin: 0;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes dialog-content-in {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -48%) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
