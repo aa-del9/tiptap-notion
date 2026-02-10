@@ -92,6 +92,7 @@ import {
   useToc,
 } from "@/components/tiptap-node/toc-node/context/toc-context";
 import { ListNormalizationExtension } from "@/components/tiptap-extension/list-normalization-extension";
+import { catMarkdown } from "./data/default-content";
 
 export interface NotionEditorProps {
   room: string;
@@ -312,6 +313,7 @@ export function EditorProvider(props: EditorProviderProps) {
       //   },
       // }),
     ],
+    content: catMarkdown,
   });
 
   if (!editor) {
